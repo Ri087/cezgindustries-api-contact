@@ -26,8 +26,8 @@ type Contacts struct {
 
 func AllContact(w http.ResponseWriter, r *http.Request) {
 	Jerem := Contact{Id: 1, Name: "Jeremy", Age: 18, Post: "Dev Back & Front", Mail: "jeremy.dura@ynov.com", UrlImage: "https://cezgindustries-api-contact.herokuapp.com/ressources/img/photo_jeremy.jpg", Cities: "Lyon", Competences: []string{"Golang", "CSS", "web", "Font End Developement", "HTML", "Back End Developement"}}
-	Benjamin := Contact{Id: 2, Name: "Benjamin", Age: 18, Post: "Dev Backend", Mail: "benjamin.vernet@ynov.com", UrlImage: "https://cezgindustries-api-contact.herokuapp.com/ressources/img/photo_benjamin.png", Cities: "Lyon", Competences: []string{"Golang", "Font End Developement", "HTML", "CSS", "web", "Back End Developement"}}
-	Sean := Contact{Id: 3, Name: "Sean", Age: 23, Post: "Dev FrontEnd", Mail: "sean.cappe@ynov.com", UrlImage: "https://cezgindustries-api-contact.herokuapp.com/ressources/img/photo_sean.jpg", Cities: "Lyon", Competences: []string{"HTML", "CSS", "Back End Developement", "Web", "Font End Developement", "Main ADC"}}
+	Benjamin := Contact{Id: 2, Name: "Benjamin", Age: 18, Post: "Dev Backend", Mail: "benjamin.vernet@ynov.com", UrlImage: "https://cezgindustries-api-contact.herokuapp.com/ressources/img/photo_benjamin.png", Cities: "Lyon", Competences: []string{"Golang", "Font End Developement", "HTML", "CSS", "web", "Back End Developement", "Main ADC"}}
+	Sean := Contact{Id: 3, Name: "Sean", Age: 23, Post: "Dev FrontEnd", Mail: "sean.cappe@ynov.com", UrlImage: "https://cezgindustries-api-contact.herokuapp.com/ressources/img/photo_sean.jpg", Cities: "Lyon", Competences: []string{"HTML", "CSS", "Back End Developement", "Web", "Font End Developement", "Garen IRL"}}
 	Contacts := Contacts{
 		CoFounder: []Contact{
 			Jerem,
