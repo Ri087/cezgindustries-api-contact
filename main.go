@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -51,12 +52,16 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 }
 func handleRequest() {
 	port := os.Getenv("PORT")
-	http.HandleFunc("/", AllContact)
+	http.HandleFunc("/api", AllContact)
 	fileServer := http.FileServer(http.Dir("./static"))
 	http.Handle("/ressources/", http.StripPrefix("/ressources/", fileServer))
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 func main() {
 	handleRequest()
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		var templateshtml = template.Must(template.ParseGlob("./static/html/*.html"))
+		templateshtml.ExecuteTemplate(w, "index.html", "")
+	})
 
 }
