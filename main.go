@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -59,9 +58,5 @@ func handleRequest() {
 }
 func main() {
 	handleRequest()
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		var templateshtml = template.Must(template.ParseGlob("./static/html/*.html"))
-		templateshtml.ExecuteTemplate(w, "index.html", "")
-	})
 
 }
